@@ -14,10 +14,21 @@
 
 // ==========================================================
 //   ~~~~~~~~~~ Print 1 to n ~~~~~~~~~~
-function printNumbers(n){ // TC & SC O(n) & O(n)
-    if(n > 0){
-        printNumbers(n-1);
-        console.log(n)
+// function printNumbers(n){ // TC & SC O(n) & O(n)
+//     if(n > 0){
+//         printNumbers(n-1);
+//         console.log(n)
+//     }
+// }
+// printNumbers(10)
+
+function print(i , n){
+    if(i>n){
+       return;
     }
-}
-printNumbers(10)
+ 
+    print(i+1, n)
+    console.log(i)
+ }
+ 
+ console.log(print(1,5))

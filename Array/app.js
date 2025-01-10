@@ -361,7 +361,7 @@
 //    }
 //    return duplicates;
 // }
-//     ~~~~~~~~ Using Hashmap // TC & SC = O(n) & O(n) ~~~~~~~~~~~
+//     ~~~~~~~~~~ Using Hashmap // TC & SC = O(n) & O(n) ~~~~~~~~~~~
 // var findDuplicates = function(nums) { 
 //     const map = new Map();
 //     const ans = [];
@@ -385,7 +385,36 @@
 // const arr = [4,3,2,7,8,2,3,1]
 // console.log(findDuplicates(arr))
 
-// ~~~~~~~~~~~~ Reverse an Array ~~~~~~~~~~~~~~~~~
+// =============================================================
+//~~~~~~~~~~~~~~~ Merge Sorted Array ~~~~~~~~~~~~~~~
+function mergeArrays(nums1, m, nums2, n){
+    let i = m - 1; // Pointer for nums1
+    let j = n - 1; // Pointer for nums2
+    let k = m + n - 1; // Pointer for the end of nums1
+
+    while (j >= 0) {
+        if (nums1[i] > nums2[j]) {
+            nums1[k] = nums1[i];
+            k--;
+            j--;
+        } else {
+            nums1[k] = nums2[j];
+            k--;
+            j--; 
+        }
+    }
+
+    //Copy remaining elements from nums2 (if any)
+    while (j >= 0) {
+        nums1[k--] = nums2[j--];
+    }
+    return nums1;
+}
+
+const nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+console.log(mergeArrays(nums1, m, nums2, n))
+console.log("Radhey Radhey 🙏")
+// ~~~~~~~~~~~~ Reverse an Array ~~~~~~~~~~~~~~~~
 // Q. Reverse an Array
 
 // function reveseArr(str){
@@ -394,7 +423,7 @@
 //     for(let i=0; i<j/2; i++){
 //         let temp = str[i];
 //         str[i] = str[j];
-//         str[j] = temp;
+//         st r[j] = temp;
 //         j--;
 //     }
 //      return [str, save]
@@ -415,16 +444,4 @@
 // const target = 23;
 // console.log(findTarget(arr, target))
 
-//~~~~~~~~~~~~~~~~~~~~~~~~ Merge Sorted Array ~~~~~~~~~~~~~~~~~~~~~
-// Q. Merge Sorted Array
 
-// function mergeSortedArray(arr1, arr2){
-//     let j=arr1.length-1;
-//     for( let i=0; i<arr1.length-1; i++){
-        
-//     }
-// }
-// const arr1 = [1,3,5,7];
-// const arr2 = [2,4,6,8];
-
-// console.log(mergeSortedArray(arr1, arr2))
