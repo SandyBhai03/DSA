@@ -22,13 +22,38 @@
 // }
 // printNumbers(10)
 
-function print(i , n){
-    if(i>n){
-       return;
-    }
+// function print(i , n){
+//     if(i>n){
+//        return;
+//     }
  
-    print(i+1, n)
-    console.log(i)
+//    //  console.log(i)
+//     print(i+1, n)
+//     console.log(i)
+//  }
+ 
+//  console.log(print(1,10))
+ 
+// console.log(printR(10,1))
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// function fact(n){
+//    if(n===1){
+//       return 1;
+//    }
+
+//    return n*fact(n-1)
+// }
+
+// console.log(fact(5))
+
+// Q. ~~~~~~~~~~~~~~~ Fibonacci Numbers ~~~~~~~~~~~~~
+function fibonacci(n) {
+   if (n <= 0) return 0; // Base case for n = 0
+   if (n === 1) return 1; // Base case for n = 1
+   return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case
  }
  
- console.log(print(1,5))
+ const n = 10;
+ console.log(`The ${n}th Fibonacci number is: ${fibonacci(n)}`);
